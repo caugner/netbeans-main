@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+
+Copyright 2016 Oracle and/or its affiliates. All rights reserved.
+
+Oracle and Java are registered trademarks of Oracle and/or its affiliates.
+Other names may be trademarks of their respective owners.
+
+The contents of this file are subject to the terms of either the GNU
+General Public License Version 2 only ("GPL") or the Common
+Development and Distribution License("CDDL") (collectively, the
+"License"). You may not use this file except in compliance with the
+License. You can obtain a copy of the License at
+http://www.netbeans.org/cddl-gplv2.html
+or nbbuild/licenses/CDDL-GPL-2-CP. See the License for the
+specific language governing permissions and limitations under the
+License.  When distributing the software, include this License Header
+Notice in each file and include the License file at
+nbbuild/licenses/CDDL-GPL-2-CP.  Oracle designates this
+particular file as subject to the "Classpath" exception as provided
+by Oracle in the GPL Version 2 section of the License file that
+accompanied this code. If applicable, add the following below the
+License Header, with the fields enclosed by brackets [] replaced by
+your own identifying information:
+"Portions Copyrighted [year] [name of copyright owner]"
+
+If you wish your version of this file to be governed by only the CDDL
+or only the GPL Version 2, indicate your decision by adding
+"[Contributor] elects to include this software in this distribution
+under the [CDDL or GPL Version 2] license." If you do not indicate a
+single choice of license, a recipient has the option to distribute
+your version of this file under either the CDDL, the GPL Version 2 or
+to extend the choice of license to its licensees as provided above.
+However, if you add GPL Version 2 code and therefore, elected the GPL
+Version 2 license, then the option applies only if the new code is
+made subject to such option by the copyright holder.
+
+Contributor(s):
+
+Portions Copyrighted 2016 Sun Microsystems, Inc.
+-->
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="StyleSheet" href="nbdocs://org.netbeans.modules.usersguide/org/netbeans/modules/usersguide/ide.css" type="text/css">
+<title>Configuring Support for the Liberty SAML Token Profile</title>
+</head>
+<body>
+<h2>Configuring Support for the Liberty SAML Token Profile</h2>
+<p><small><a href="#seealso">See Also</a></small></p>
+<p>For the Liberty sample, NetBeans Enterprise Pack supports three token profiles: <tt>LibertyBearerToken</tt>, <tt>LibertyX509Token</tt>, and <tt>LibertySAMLToken</tt>. If you want to use the <tt>LibertySAMLToken</tt> profile, you must perform the manual configuration steps provided in this topic.</p>
+
+<p><b>To configure support for the <tt>LibertySAMLToken</tt> profile:</b></p>
+<ol>
+<li>Make sure the application server is running.</li>
+<li>Start a new browser session and point at the following URL: <tt>http://<i>localhost-fqdn</i>:8080/amserver</tt><br>
+If your server is not installed on port <tt>8080</tt>, replace <tt>8080</tt> in the URL above with the correct port number.</li>
+<li>At the Login screen, use the following values to log in:<br>
+User: <tt>amadmin</tt><br>
+Password: <tt>admin123</tt> (this is the default password).</li>
+<li>Click the Web Services tab and then, in the Web Services page, click the Discovery Service tab.</li>
+<li>Scroll to the bottom of the page and in the Resource Offerings for Bootstrapping area, click the default Service Type, <tt>urn:liberty:disco:2003-08</tt>.<br>
+The Edit Resource Offerings page opens.</li>
+<li>Under Service Instance, in the Service Description area, select the checkbox next to the <tt>urn:liberty:security:2003-08:null:null</tt> entry and click the Delete button.<br>
+The Service Description area now has no items.</li>
+<li>In the Service Description area, click the New Description button.<br>
+The New Security Mechanism ID page opens.</li>
+<li>In the New Security Mechanism ID page, in the Available list, select <tt>urn:liberty:security:2005-02:null:X509</tt> and click OK.<br>
+<b>Note:</b> If the system asks you for an End Point URL, you can use <tt>http://localhost:8080/amserver/Liberty/disco</tt>. If your server is not installed on port <tt>8080</tt>, replace <tt>8080</tt> with the correct port number.<br>
+The Edit Resource Offering page opens and under Service Instance, in the Service Description area, there is now an entry labeled <tt>urn:liberty:security:2005-02:null:X509</tt>.</li>
+<li>At the Edit Resource Offering page, click Save, then at the Discovery Service page, click Save.</li>
+<li>In the upper navigation area, click Log Out.</li>
+</ol>
+<dl>
+<dt><a name="seealso">See Also</a></dt>
+<dd><a href="config_am_sec_mech.html">Configuring Security Mechanism Profiles for Sun Java System Access Manager Instances</a></dd>
+<dd><a href="config_liberty_customkeystore.html">Using a Custom Keystore for the Liberty Token Profile</a></dd>
+<dd><a href="../clients/wsc_enable_liberty.html">Enabling the Liberty Security Mechanism for Web Service Clients</a></dd>
+<dd><a href="../providers/wsp_enable_liberty.html">Enabling the Liberty Security Mechanism for Web Service Providers</a></dd>
+</dl>
+<hr>
+<small><a href="../credits.html">Legal Notices</a></small>
+<table cellpadding="20" border="0"> 
+<tr><td>&nbsp;</td></tr> 
+<tr><td>&nbsp;</td></tr> 
+<tr><td>&nbsp;</td></tr> 
+</table> 
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<!--
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+
+Copyright 2016 Oracle and/or its affiliates. All rights reserved.
+
+Oracle and Java are registered trademarks of Oracle and/or its affiliates.
+Other names may be trademarks of their respective owners.
+
+The contents of this file are subject to the terms of either the GNU
+General Public License Version 2 only ("GPL") or the Common
+Development and Distribution License("CDDL") (collectively, the
+"License"). You may not use this file except in compliance with the
+License. You can obtain a copy of the License at
+http://www.netbeans.org/cddl-gplv2.html
+or nbbuild/licenses/CDDL-GPL-2-CP. See the License for the
+specific language governing permissions and limitations under the
+License.  When distributing the software, include this License Header
+Notice in each file and include the License file at
+nbbuild/licenses/CDDL-GPL-2-CP.  Oracle designates this
+particular file as subject to the "Classpath" exception as provided
+by Oracle in the GPL Version 2 section of the License file that
+accompanied this code. If applicable, add the following below the
+License Header, with the fields enclosed by brackets [] replaced by
+your own identifying information:
+"Portions Copyrighted [year] [name of copyright owner]"
+
+If you wish your version of this file to be governed by only the CDDL
+or only the GPL Version 2, indicate your decision by adding
+"[Contributor] elects to include this software in this distribution
+under the [CDDL or GPL Version 2] license." If you do not indicate a
+single choice of license, a recipient has the option to distribute
+your version of this file under either the CDDL, the GPL Version 2 or
+to extend the choice of license to its licensees as provided above.
+However, if you add GPL Version 2 code and therefore, elected the GPL
+Version 2 license, then the option applies only if the new code is
+made subject to such option by the copyright holder.
+
+Contributor(s):
+
+Portions Copyrighted 2016 Sun Microsystems, Inc.
+-->
+  <meta name="lastupdated" content="4Feb04">
+<!-- p1 -->
+  <title>About JMX Application Development</title>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <link rel="StyleSheet" href="ide.css" type="text/css">
+</head>
+<body>
+<h2>JMX Technology and J2SE 5.0</h2>
+J2SE 5.0 has implemented version 1.2 of the JMX specification and
+version 1.0 of the <a
+ href="http://jcp.org/aboutJava/communityprocess/final/jsr160/index.html">JMX
+Remote API (JSR 160)</a> specification. J2SE 5.0 includes significant
+monitoring and management features, including:
+<p></p>
+<ul>
+  <li><b>JVM instrumentation:</b> The JVM is instrumented for
+monitoring and management providing built-in, out-of-the-box management
+capabilities for local and remote access.<br>
+    <br>
+  </li>
+  <li><b>Monitoring and Management APIs:</b> The <code>java.lang.management</code>
+package provides the interface for monitoring and managing the JVM. It
+provides access to information such as: the number of classes loaded and
+threads running, memory consumption, garbage collection statistics,
+on-demand deadlock detection, and others.<br>
+    <br>
+  </li>
+  <li><b>Management tools</b> such as <a
+ href="http://java.sun.com/developer/technicalArticles/J2SE/jconsole.html">JConsole</a>,
+which is a JMX-compliant monitoring tool that comes with J2SE 5.0. It
+uses JMX instrumentation of the JVM to provide information on
+performance and resource consumption of applications running on the
+Java platform.<br>
+    <br>
+  </li>
+</ul>
+<p>
+The core classes for the JMX implementation are provided in the <a
+ href="http://java.sun.com/j2se/1.5.0/docs/api/javax/management/package-summary.html#package_description"><code>javax.management</code></a>
+package. In addition, the <a
+ href="http://java.sun.com/j2se/1.5.0/docs/api/java/lang/management/package-summary.html#package_description"><code>java.lang.management</code></a>
+package provides the mangagement interface for monitoring and
+management of the JVM as well as the operating system on which the JVM
+is running.
+</p>
+<p>
+To enable the JMX agent and configure its operation using <code>jconsole</code>,
+you must set some specific system properties when you start the JVM.
+For local access, set the property <code>com.sun.management.jmxremote</code>
+as follows when starting the JVM:
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<b>prompt&gt;</b> <code>java
+-Dcom.sun.management.jmxremote AppName</code>
+</p>
+<p>And, to enable monitoring and management from remote systems, set
+the property:
+</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<code>com.sun.management.jmxremote.port=portNumber</code>
+</p>
+<p>For more information on setting system properties for JMX, please
+see <a
+ href="http://java.sun.com/j2se/1.5.0/docs/guide/management/agent.html">Monitoring
+and Management using JMX</a>.
+</p>
+<hr><small><a href="credits.html">Legal Notices</a>
+<table cellpadding="20" border="0">
+  <tbody>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+</small>
+</body>
+</html>

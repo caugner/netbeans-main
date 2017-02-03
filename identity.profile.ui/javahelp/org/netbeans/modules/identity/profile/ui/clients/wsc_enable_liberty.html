@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+
+Copyright 2016 Oracle and/or its affiliates. All rights reserved.
+
+Oracle and Java are registered trademarks of Oracle and/or its affiliates.
+Other names may be trademarks of their respective owners.
+
+The contents of this file are subject to the terms of either the GNU
+General Public License Version 2 only ("GPL") or the Common
+Development and Distribution License("CDDL") (collectively, the
+"License"). You may not use this file except in compliance with the
+License. You can obtain a copy of the License at
+http://www.netbeans.org/cddl-gplv2.html
+or nbbuild/licenses/CDDL-GPL-2-CP. See the License for the
+specific language governing permissions and limitations under the
+License.  When distributing the software, include this License Header
+Notice in each file and include the License file at
+nbbuild/licenses/CDDL-GPL-2-CP.  Oracle designates this
+particular file as subject to the "Classpath" exception as provided
+by Oracle in the GPL Version 2 section of the License file that
+accompanied this code. If applicable, add the following below the
+License Header, with the fields enclosed by brackets [] replaced by
+your own identifying information:
+"Portions Copyrighted [year] [name of copyright owner]"
+
+If you wish your version of this file to be governed by only the CDDL
+or only the GPL Version 2, indicate your decision by adding
+"[Contributor] elects to include this software in this distribution
+under the [CDDL or GPL Version 2] license." If you do not indicate a
+single choice of license, a recipient has the option to distribute
+your version of this file under either the CDDL, the GPL Version 2 or
+to extend the choice of license to its licensees as provided above.
+However, if you add GPL Version 2 code and therefore, elected the GPL
+Version 2 license, then the option applies only if the new code is
+made subject to such option by the copyright holder.
+
+Contributor(s):
+
+Portions Copyrighted 2016 Sun Microsystems, Inc.
+-->
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="StyleSheet" href="nbdocs://org.netbeans.modules.usersguide/org/netbeans/modules/usersguide/ide.css" type="text/css">
+<title>Enabling the Liberty Security Mechanism for Web Service Clients</title>
+</head>
+<body>
+<h2>Enabling the Liberty Security Mechanism for Web Service Clients</h2>
+<p><small><a href="#seealso">See Also</a></small></p>
+<p>You use the AM Security tab of the Web Service Attributes Editor to enable and configure the Liberty security mechanism for web service clients.</p>
+<p><b>To enable the Liberty security mechanism for a web service client:</b></p>
+<ol>
+<li>In the Projects window, expand the project node for the project where your web service client is defined.</li>
+<li>Expand the <tt>Web Service References</tt> node and right-click the <tt><i>web-service-information</i></tt> node and choose Edit Web Service Attributes from the pop-up menu.<br>
+The Web Service Attributes Editor opens with the AM Security tab open.</li>
+<li>Select the Enable Message Level Security checkbox.</li>
+<li>Under Security Mechanism, from the Request drop-down list, select LibertyDiscoverySecurity.</li>
+<li>To specify that response verification is required, select the Verify Response checkbox.</li>
+<li>Under Existing&nbsp;Certificate&nbsp;Settings, to use a custom keystore, clear the Use Default Key Store checkbox and complete the four keystore-related fields.<br>
+You can use the Browse button to navigate to and select a different location for the keystore file.<br>
+<ul class="note">
+<li>For the Liberty security mechanism, you must perform the steps described in <a href="../am/config_liberty_customkeystore.html">Using a Custom Keystore for the Liberty Token Profile</a> before deploying or running the project.</li>
+<li>If you use the default keystore for the web service client, you must also use the default keystore for the web service provider.</li>
+</ul></li>
+<li>From the Server drop-down list, select the Access Manager server instance that will be used by the web service client to look up the web service provider.<br>
+This instance should match the instance that was used by the web service provider to register itself with the discovery service for the Liberty token profile. If this instance is different for the web service client and the web service provider, some additional steps are needed.<br>
+For Liberty token profiles used in this scenario, the Discovery Service, that is, the configured Sun Java System Access Manager server should have the resource offering of the web service provider. If this is not the case, the resource offering must be added manually using Sun Java System Access Manager Admin Console. For instructions about adding the resource offering to the web service client's configured Sun Java System Access Manager, see<br>
+<object classid="java:org.netbeans.modules.javahelp.BrowserDisplayer">
+   <param name="content" value="http://docs.sun.com/app/docs/doc/819-2142/6n4evuvv6?a=view">
+   <param name="text" value="<html><u>Discovery Entries and Resource Offerings</u></html>">
+   <param name="textFontSize" value="medium">
+   <param name="textColor" value="blue">
+</object><br>
+in the <i>Sun Java System Access Manager 7 Federation and SAML Administration Guide</i>.</li>
+<li>Click OK.</li>
+</ol>
+<dl>
+<dt><a name="seealso">See Also</a></dt>
+<dd><a href="../csh/csh_securingwebserviceclient.html" title="Web Service Attributes Editor: Web Service Client Security Configuration">Web Service Attributes Editor: Web Service Client Security Configuration</a></dd>
+<dd><a href="../am/config_support_libertysaml.html" title="Configuring Support for the Liberty SAML Token Profile">Configuring Support for the Liberty SAML Token Profile</a></dd>
+<dd><a href="../about.html" title="About Identity Management Tools">About Identity Management Tools</a></dd>
+</dl>
+<hr>
+<small><a href="../credits.html">Legal Notices</a></small>
+<table cellpadding="20" border="0"> 
+<tr><td>&nbsp;</td></tr> 
+<tr><td>&nbsp;</td></tr> 
+<tr><td>&nbsp;</td></tr> 
+</table> 
+</body>
+</html>

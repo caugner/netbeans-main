@@ -1,0 +1,236 @@
+<!--
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+
+Copyright (c) 2005, 2016 Oracle and/or its affiliates. All rights reserved.
+
+Oracle and Java are registered trademarks of Oracle and/or its affiliates.
+Other names may be trademarks of their respective owners.
+
+The contents of this file are subject to the terms of either the GNU
+General Public License Version 2 only ("GPL") or the Common
+Development and Distribution License("CDDL") (collectively, the
+"License"). You may not use this file except in compliance with the
+License. You can obtain a copy of the License at
+http://www.netbeans.org/cddl-gplv2.html
+or nbbuild/licenses/CDDL-GPL-2-CP. See the License for the
+specific language governing permissions and limitations under the
+License.  When distributing the software, include this License Header
+Notice in each file and include the License file at
+nbbuild/licenses/CDDL-GPL-2-CP.  Oracle designates this
+particular file as subject to the "Classpath" exception as provided
+by Oracle in the GPL Version 2 section of the License file that
+accompanied this code. If applicable, add the following below the
+License Header, with the fields enclosed by brackets [] replaced by
+your own identifying information:
+"Portions Copyrighted [year] [name of copyright owner]"
+
+If you wish your version of this file to be governed by only the CDDL
+or only the GPL Version 2, indicate your decision by adding
+"[Contributor] elects to include this software in this distribution
+under the [CDDL or GPL Version 2] license." If you do not indicate a
+single choice of license, a recipient has the option to distribute
+your version of this file under either the CDDL, the GPL Version 2 or
+to extend the choice of license to its licensees as provided above.
+However, if you add GPL Version 2 code and therefore, elected the GPL
+Version 2 license, then the option applies only if the new code is
+made subject to such option by the copyright holder.
+
+Contributor(s):
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!--
+I18n NOTE: This file should NOT be localized!
+-->
+<html>
+  <head>
+<!--
+Note, the Java browser doesn't understand the font-family "mono" (must be "monospace"),
+nor does it understand class names with uppercase letters.
+-->
+  <style type="text/css">
+<!--
+.hidden {
+	display: none;
+}
+.sender-default {
+	font-family: sans-serif;
+	font-size: @BASE_FONT_SIZE@;
+	font-weight: bold;
+	color: #000000;
+}
+.sender1 {
+	font-family: sans-serif;
+	font-size: @BASE_FONT_SIZE@;
+	font-weight: bold;
+	color: #FF0000;
+}
+.sender2 {
+	font-family: sans-serif;
+	font-size: @BASE_FONT_SIZE@;
+	font-weight: bold;
+	color: #0000FF;
+}
+.sender3 {
+	font-family: sans-serif;
+	font-size: @BASE_FONT_SIZE@;
+	font-weight: bold;
+	color: #009900;
+}
+.sender4 {
+	font-family: sans-serif;
+	font-size: @BASE_FONT_SIZE@;
+	font-weight: bold;
+	color: #FF9900;
+}
+.sender5 {
+	font-family: sans-serif;
+	font-size: @BASE_FONT_SIZE@;
+	font-weight: bold;
+	color: #FF00FF;
+}
+.sender6 {
+	font-family: sans-serif;
+	font-size: @BASE_FONT_SIZE@;
+	font-weight: bold;
+	color: #33CCFF;
+}
+.sender7 {
+	font-family: sans-serif;
+	font-size: @BASE_FONT_SIZE@;
+	font-weight: bold;
+	color: #9900FF;
+}
+.sender8 {
+	font-family: sans-serif;
+	font-size: @BASE_FONT_SIZE@;
+	font-weight: bold;
+	color: #666666;
+}
+.sender9 {
+	font-family: sans-serif;
+	font-size: @BASE_FONT_SIZE@;
+	font-weight: bold;
+	color: #CC6600;
+}
+.message-chat {
+	font-family: sans-serif;
+	font-size: @BASE_FONT_SIZE@;
+}
+.message-text {
+	font-family: Courier, mono, monospace;
+	font-size: @BASE_FONT_SIZE@;
+}
+.message-java {
+	font-family: Courier, mono, monospace;
+	font-size: @BASE_FONT_SIZE@;
+}
+.message-xml {
+	font-family: Courier, mono, monospace;
+	font-size: @BASE_FONT_SIZE@;
+}
+.message-system {
+	font-family: sans-serif;
+	font-size: @BASE_FONT_SIZE@;
+	color: #CA5600
+}
+.message-html {
+}
+.message-other {
+	font-family: Courier, mono, monospace;
+	font-size: @BASE_FONT_SIZE@;
+}
+.timestamp {
+	font-family: sans-serif;
+	color: #000000;
+	font-size: @BASE_FONT_SIZE@;
+}
+.keyword {
+	color: #0000F0
+}
+.comment {
+	color: #1E801E
+}
+.string {
+	color: #007F7F
+}
+.line-number {
+	color: #909090
+}
+.line-number-highlight {
+	color: #FF0000
+}
+.protected {
+	background-color: #E1ECF7
+}
+-->
+  </style>
+  </head>
+  <body>
+
+	<!-- TAF: Experimental, please leave -->
+		<!--
+		<tr>
+			<td valign="top" colspan="2">
+				<object classid="org.netbeans.modules.collab.channel.chat.impl.TranscriptMessageComponent">
+					<param name="text" value="__MESSAGE_TEXT__" valuetype="data">
+					<param name="contentType" value="__CONTENT_TYPE__" valuetype="data">
+				</object>
+			</td>
+		</tr>
+		-->
+
+  	<!--
+	The following element with the embedded comment is a template
+	that will be used by the module to insert formatted message text
+	into the document without foreknowledge of the markup.  Please
+	be sure that the format of this template element remains 
+	unchanged!
+	-->
+	<div id="CHAT_MESSAGE_TEMPLATE">
+		<!--
+	    <table cellpadding="0">
+		<tr>
+			<td valign="top" nowrap>
+				&nbsp;<font class="timestamp">__TIMESTAMP__</font>&nbsp;&nbsp;
+			</td>
+			<td valign="top">
+				<font class="__SENDER_CLASS__">__SENDER__</font>&nbsp;<font class="__MESSAGE_CLASS__">__MESSAGE__</font>
+			</td>
+		</tr>
+		</table>
+		-->
+	</div>
+  	<div id="MESSAGE_TEMPLATE">
+		<!--
+	    <table cellpadding="0">
+		<tr>
+			<td align="left" valign="top" nowrap>
+				&nbsp;<font class="timestamp">__TIMESTAMP__</font>&nbsp;&nbsp;
+			</td>
+			<td align="left" valign="top" nowrap>
+				<font class="__SENDER_CLASS__">__SENDER__</font>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top">&nbsp;</td>
+			<td valign="top" class="__MESSAGE_CLASS__">__MESSAGE__</td>
+		</tr>
+		</table>
+		-->
+	</div>
+	<div id="SYSTEM_MESSAGE_TEMPLATE">
+		<!--
+	    <table cellpadding="0">
+		<tr>
+			<td valign="top">
+				&nbsp;<font class="timestamp">__TIMESTAMP__</font> &nbsp;<font class="__MESSAGE_CLASS__">__MESSAGE__</font>
+			</td>
+		</tr>
+		</table>
+		-->
+	</div>
+
+	<p id="END"></p>
+	
+  </body>
+</html>

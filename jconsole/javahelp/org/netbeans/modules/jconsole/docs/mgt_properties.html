@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<!--
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+
+Copyright 2016 Oracle and/or its affiliates. All rights reserved.
+
+Oracle and Java are registered trademarks of Oracle and/or its affiliates.
+Other names may be trademarks of their respective owners.
+
+The contents of this file are subject to the terms of either the GNU
+General Public License Version 2 only ("GPL") or the Common
+Development and Distribution License("CDDL") (collectively, the
+"License"). You may not use this file except in compliance with the
+License. You can obtain a copy of the License at
+http://www.netbeans.org/cddl-gplv2.html
+or nbbuild/licenses/CDDL-GPL-2-CP. See the License for the
+specific language governing permissions and limitations under the
+License.  When distributing the software, include this License Header
+Notice in each file and include the License file at
+nbbuild/licenses/CDDL-GPL-2-CP.  Oracle designates this
+particular file as subject to the "Classpath" exception as provided
+by Oracle in the GPL Version 2 section of the License file that
+accompanied this code. If applicable, add the following below the
+License Header, with the fields enclosed by brackets [] replaced by
+your own identifying information:
+"Portions Copyrighted [year] [name of copyright owner]"
+
+If you wish your version of this file to be governed by only the CDDL
+or only the GPL Version 2, indicate your decision by adding
+"[Contributor] elects to include this software in this distribution
+under the [CDDL or GPL Version 2] license." If you do not indicate a
+single choice of license, a recipient has the option to distribute
+your version of this file under either the CDDL, the GPL Version 2 or
+to extend the choice of license to its licensees as provided above.
+However, if you add GPL Version 2 code and therefore, elected the GPL
+Version 2 license, then the option applies only if the new code is
+made subject to such option by the copyright holder.
+
+Contributor(s):
+
+Portions Copyrighted 2016 Sun Microsystems, Inc.
+-->
+  <meta name="lastupdated" content="4Feb04">
+<!-- p1 -->
+  <title>About JMX Application Development</title>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <link rel="StyleSheet" href="nbdocs://org.netbeans.modules.usersguide/org/netbeans/modules/usersguide/ide.css" type="text/css">
+</head>
+<body>
+<h2>Management Property File Wizard<br>
+</h2>
+This wizard allows you to generate a management configuration file.
+This file is a standard Java property file.<br>
+When launching a JDK 5.0 JVM, you can provide a management property
+file using the following System property<br>
+<pre style="font-weight: bold; font-style: italic;">-Dcom.sun.management.config.file=&lt;path to managemenet properties file&gt;</pre>
+<br>
+To Access the wizard :<br>
+<ol>
+  <li>Select <span style="font-style: italic;">File/New File...</span></li>
+  <li>Select the <span style="font-style: italic;">JMX </span>category.
+In <span style="font-style: italic;">File Types</span> select <span
+ style="font-style: italic;">Management Properties File<br>
+    </span></li>
+  <li>Type in a <span style="font-style: italic;">Name</span> and a <span
+ style="font-style: italic;">Location</span>. Two more files will be
+generated: an access file and a password file that contain the RMI authentication
+configuration.<br>
+  </li>
+  <li>Click <span style="font-style: italic;">Next&gt;</span></li>
+  <li>Type in RMI related information. You can set an RMI Port, enable
+RMI Authentication, add Roles and Passwords, Enable SSL.<span
+ style="font-weight: bold;">&nbsp;</span></li>
+  <li>Click <span style="font-style: italic;">Next&gt;</span></li>
+  <li>You can enable SNMP and type in a UDP
+port, an SNMP interface, a trap port, enable Access Control, and set a
+custom ACL file.<br>
+  </li>
+  <li>Click <span style="font-style: italic;">Next&gt;</span></li>
+  <li>You can then enable
+thread contention monitoring.&nbsp;<span style="font-weight: bold;"></span></li>
+  <li><span style="font-style: italic;">Finish&gt; </span>A popup
+window informs you to restrict access to the password file. You have to
+change
+the generated .password file access. It must be readable for you only
+(On Unix systems : -rw-------). If you don't change the access, and you
+enable RMI Authentication, the
+Agent will not start.</li>
+  <span style="font-style: italic;"><br>
+  </span>
+</ol>
+Three files are generated in the selected location. You can use the
+generated properties file when running the Main Project with Remote
+Management (from menu <span style="font-style: italic;">Run/Management/Run(orDebug)
+Main Project with Remote Management...</span>).<span
+ style="font-weight: bold;"><br>
+</span>
+<h3 class="pHeading2"></h3>
+<h3 class="pHeading2">
+<hr><small><a href="credits.html">Legal Notices</a>
+<table cellpadding="20" border="0">
+  <tbody>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+</small>
+</h3>
+</body>
+</html>

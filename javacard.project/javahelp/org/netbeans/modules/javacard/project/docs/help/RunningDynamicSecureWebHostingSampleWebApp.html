@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+
+Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+
+Oracle and Java are registered trademarks of Oracle and/or its affiliates.
+Other names may be trademarks of their respective owners.
+
+The contents of this file are subject to the terms of either the GNU
+General Public License Version 2 only ("GPL") or the Common
+Development and Distribution License("CDDL") (collectively, the
+"License"). You may not use this file except in compliance with the
+License. You can obtain a copy of the License at
+http://www.netbeans.org/cddl-gplv2.html
+or nbbuild/licenses/CDDL-GPL-2-CP. See the License for the
+specific language governing permissions and limitations under the
+License.  When distributing the software, include this License Header
+Notice in each file and include the License file at
+nbbuild/licenses/CDDL-GPL-2-CP.  Oracle designates this
+particular file as subject to the "Classpath" exception as provided
+by Oracle in the GPL Version 2 section of the License file that
+accompanied this code. If applicable, add the following below the
+License Header, with the fields enclosed by brackets [] replaced by
+your own identifying information:
+"Portions Copyrighted [year] [name of copyright owner]"
+
+If you wish your version of this file to be governed by only the CDDL
+or only the GPL Version 2, indicate your decision by adding
+"[Contributor] elects to include this software in this distribution
+under the [CDDL or GPL Version 2] license." If you do not indicate a
+single choice of license, a recipient has the option to distribute
+your version of this file under either the CDDL, the GPL Version 2 or
+to extend the choice of license to its licensees as provided above.
+However, if you add GPL Version 2 code and therefore, elected the GPL
+Version 2 license, then the option applies only if the new code is
+made subject to such option by the copyright holder.
+
+Contributor(s):
+
+Portions Copyrighted 2016 Sun Microsystems, Inc.
+-->
+<html lang="en-US">
+
+<head>
+<!-- GenHTML revision 22989-->
+
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<link rel="StyleSheet" href="nbdocs://org.netbeans.modules.usersguide/org/netbeans/modules/usersguide/ide.css" type="text/css">
+  <title>Running DynamicSecureWebHosting Sample Web Application - Java Card 3 Development
+  </title>
+
+</head>
+
+<body class="body">
+
+
+
+<a name="RunningDynamicSecureWebHostingSampleWebApp"></a><h2>Running <tt>DynamicSecureWebHosting</tt> Sample Web Application</h2><p class="p">The <tt>DynamicSecureWebHosting</tt> sample demonstrates secure hosting with user access on a dynamic port. The
+sample contains one web application that accesses a secure website hosted on a
+dynamic port determined by the Java Card 3 platform. Each time the application
+is run, the Java Card 3 platform determines the port used to access
+the website.</p><p class="p">Running the <tt>DynamicSecureWebHosting</tt> sample consists of using the IDE to open the <tt>DynamicSecureWebHosting</tt>
+project, starting the application, checking the website&#8217;s security certificate, displaying a web page, and
+entering information on that page.</p><h2>Before You Begin</h2><p class="p">Before performing the following procedure, the Java Card 3 Development Kit, Connected Edition
+must be downloaded and installed on your development system. </p><p class="p">The <tt>DynamicSecureWebHosting</tt> project is located under the <b>JC_CONNECTED_HOME</b><tt>\samples\web</tt> folder.</p>
+<hr><p class="p"><b>Note - </b>Refer to the <i>Java Card 3 Platform Development Kit User&#8217;s Guide</i> for additional details including screen captures.</p>
+<hr>
+<ol class="ol">
+<li class="li"><b>Click File &#62; Open Project in the main window.</b></li>
+<li class="li"><b>Go to the <b>JC_CONNECTED_HOME</b><tt>\samples\web </tt>folder and open the <tt>DynamicSecureWebHosting</tt> project.</b></li>
+<li class="li"><b>Click the run button in the main window. </b><p class="p">The IDE compiles, builds, and runs the sample. When the sample runs, the
+IDE launches the default browser and displays the Secure hosting dynamic port entry
+page.</p>
+<hr><p class="p"><b>Note - </b>If the browser displays a warning that the security certificate is not issued
+by a trusted certificate authority, disregard it and continue to the web site.
+The security certificate for this sample is used for demonstration purposes only and
+cannot be used for developing deployable samples.If you are unable to continue to the
+web page, perform <a href="AcceptingUntrustedCertificates.html">Accepting Untrusted Certificates</a>.</p>
+<hr>
+</li>
+<li class="li"><b>Enter text in the name field and click the Say Hello button.</b><p class="p">The browser displays a greeting page that uses the text entered in the
+name field.</p></li>
+<li class="li"><b>Close the browser to stop the application.</b></li></ol>
+
+
+</body>
+</html>

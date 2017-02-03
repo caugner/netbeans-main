@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+
+Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+
+Oracle and Java are registered trademarks of Oracle and/or its affiliates.
+Other names may be trademarks of their respective owners.
+
+The contents of this file are subject to the terms of either the GNU
+General Public License Version 2 only ("GPL") or the Common
+Development and Distribution License("CDDL") (collectively, the
+"License"). You may not use this file except in compliance with the
+License. You can obtain a copy of the License at
+http://www.netbeans.org/cddl-gplv2.html
+or nbbuild/licenses/CDDL-GPL-2-CP. See the License for the
+specific language governing permissions and limitations under the
+License.  When distributing the software, include this License Header
+Notice in each file and include the License file at
+nbbuild/licenses/CDDL-GPL-2-CP.  Oracle designates this
+particular file as subject to the "Classpath" exception as provided
+by Oracle in the GPL Version 2 section of the License file that
+accompanied this code. If applicable, add the following below the
+License Header, with the fields enclosed by brackets [] replaced by
+your own identifying information:
+"Portions Copyrighted [year] [name of copyright owner]"
+
+If you wish your version of this file to be governed by only the CDDL
+or only the GPL Version 2, indicate your decision by adding
+"[Contributor] elects to include this software in this distribution
+under the [CDDL or GPL Version 2] license." If you do not indicate a
+single choice of license, a recipient has the option to distribute
+your version of this file under either the CDDL, the GPL Version 2 or
+to extend the choice of license to its licensees as provided above.
+However, if you add GPL Version 2 code and therefore, elected the GPL
+Version 2 license, then the option applies only if the new code is
+made subject to such option by the copyright holder.
+
+Contributor(s):
+
+Portions Copyrighted 2016 Sun Microsystems, Inc.
+-->
+<html lang="en-US"><head>
+<!-- GenHTML revision 23224-->    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<link rel="StyleSheet" href="nbdocs://org.netbeans.modules.usersguide/org/netbeans/modules/usersguide/ide.css" type="text/css">
+<title>Stepping Through Code - Java Card 3 Development
+   </title></head><body class="body"><a name="SteppingThroughCode"></a><h2>Stepping Through Code</h2>
+<p class="p">When execution of your program is halted, you can step through your lines of code using the following commands on the Debug menu or toolbar:</p>
+<dl>
+<dt>Step Over</dt><dd>Executes one source line. If the source line contains a call, executes the entire routine without stepping through the individual instructions.</dd>
+<dt>Step Over Expression</dt><dd>Executes one method call in an expression. If an expression has multiple method calls, you can use Step Over Expression to step through an expression and view the value of each method call in the expression in the Local Variables window. Each time you use the Step Over Expression command, the debugger advances to the next method call in the expression and the completed method call is underlined. Step Over Expression behaves like Step Over when there are no additional method calls.</dd>
+<dt>Step Into</dt><dd>Executes one method call in a source line. If the line has more than one method call, you can choose which method call to step into by using the arrow keys or mouse in the source editor to select the method call. The selected method call to step into is indicated by a box around the method call in the source editor. The most likely method call in the line is selected by default.</dd>
+<dt>Step Into Next Method</dt><dd>Executes one source line. If the source line contains a call, the IDE stops just before executing the first statement of the routine. You can also start a debugging session with the Step Into command. Program execution stops on the first line after the main routine before any changes have been made to the state of the program.</dd>
+<dt>Step Out</dt><dd>Executes one source line or, if the source line is part of a routine, executes the remaining lines of the routine and returns control to the caller of the routine. The completed method call is highlighted in the Source Editor.</dd>
+</dl>
+</body>
+</html>

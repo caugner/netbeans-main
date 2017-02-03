@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<!--
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+
+Copyright 2016 Oracle and/or its affiliates. All rights reserved.
+
+Oracle and Java are registered trademarks of Oracle and/or its affiliates.
+Other names may be trademarks of their respective owners.
+
+The contents of this file are subject to the terms of either the GNU
+General Public License Version 2 only ("GPL") or the Common
+Development and Distribution License("CDDL") (collectively, the
+"License"). You may not use this file except in compliance with the
+License. You can obtain a copy of the License at
+http://www.netbeans.org/cddl-gplv2.html
+or nbbuild/licenses/CDDL-GPL-2-CP. See the License for the
+specific language governing permissions and limitations under the
+License.  When distributing the software, include this License Header
+Notice in each file and include the License file at
+nbbuild/licenses/CDDL-GPL-2-CP.  Oracle designates this
+particular file as subject to the "Classpath" exception as provided
+by Oracle in the GPL Version 2 section of the License file that
+accompanied this code. If applicable, add the following below the
+License Header, with the fields enclosed by brackets [] replaced by
+your own identifying information:
+"Portions Copyrighted [year] [name of copyright owner]"
+
+If you wish your version of this file to be governed by only the CDDL
+or only the GPL Version 2, indicate your decision by adding
+"[Contributor] elects to include this software in this distribution
+under the [CDDL or GPL Version 2] license." If you do not indicate a
+single choice of license, a recipient has the option to distribute
+your version of this file under either the CDDL, the GPL Version 2 or
+to extend the choice of license to its licensees as provided above.
+However, if you add GPL Version 2 code and therefore, elected the GPL
+Version 2 license, then the option applies only if the new code is
+made subject to such option by the copyright holder.
+
+Contributor(s):
+
+Portions Copyrighted 2016 Sun Microsystems, Inc.
+-->
+  <meta name="lastupdated" content="4Feb04">
+<!-- p1 -->
+  <title>About JMX Application Development</title>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=iso-8859-1">
+  <link rel="StyleSheet" href="ide.css" type="text/css">
+</head>
+<body>
+<h2>Implementing the  javax.management.NotificationEmitter
+Interface<br>
+</h2>
+<br>
+NotificationEmitter is implemented using a contextual action (enabled only if an<span style="font-weight: bold;">
+MBean</span> is selected) located under the <span
+ style="font-style: italic; font-weight: bold;">Management</span> menu.
+You can access the management menu from :<br>
+<ul>
+  <li>The contextual menu for the project tree node (right click on selected node)<br>
+  </li>
+</ul>
+<br>
+<h2>Applicability of the Action</h2>
+<br>
+This action&nbsp; applies to any MBean type. If an MBean already
+implements this interface, the action is disabled.<br>
+This action applies to any MBean. You don't need to have generated them
+using the MBean wizard. <br>
+MBeans imported from other contexts can be updated.<br>
+<h2>Using the Implement NotificationEmitter Interface Action<br>
+</h2>
+<br>
+<ol>
+  <li>From the <span style="font-weight: bold; font-style: italic;">JMX</span>
+menu select <span style="font-weight: bold; font-style: italic;">Implement
+NotificationEmitter Interface...</span></li>
+  <li>The wizard can generate an implementation of the <span
+ style="font-style: italic;">NotificationEmitter</span> interface based
+on a
+NotificationBroadcasterSupport delegation. Some code to handle the
+notification sequence number can also be generated. Check the
+associated checkboxes to have this code generated.</li>
+  <li>If you want your MBean to define notifications, click <span
+ style="font-style: italic;">Add Notification</span>.</li>
+  <li>In the <span style="font-style: italic;">Notifications </span>Table,
+first row, type in the following:</li>
+  <ol>
+    <li>In the column <span style="font-style: italic;">Notification
+Class</span>
+you can select a standard JMX notification class or type in your own
+Notification class. If you select AttributeChangeNotification class,
+the Notification type will be automatically set to
+AttributeChangeNotification.ATTRIBUTE_CHANGE.<br>
+    </li>
+    <li>In the column <span style="font-style: italic;">Description</span>,
+type in a notification description (eg: "Send a notification when the
+Status attribute is changed")</li>
+    <li>In the column Notification type,&nbsp; click the <span
+ style="font-style: italic;">Edit </span>button.</li>
+    <ol>
+      <li>Click <span style="font-style: italic;">Add Type</span></li>
+      <li>In the column <span style="font-style: italic;">Notification,
+        </span> you
+can change the default type to your own type (eg :
+com.foo.event.BIRTHDAY)</li>
+    </ol>
+  </ol>
+  <li>Click OK when you have finished. </li>
+  <li>NotificationEmitter methods are added at the end of the MBean
+class.</li>
+  <li>The updated MBean class file is automatically opened in the editor.</li>
+</ol>
+</body>
+</html>

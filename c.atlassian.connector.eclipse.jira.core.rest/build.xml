@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+
+Copyright (c) 2013, 2016 Oracle and/or its affiliates. All rights reserved.
+
+Oracle and Java are registered trademarks of Oracle and/or its affiliates.
+Other names may be trademarks of their respective owners.
+
+The contents of this file are subject to the terms of either the GNU
+General Public License Version 2 only ("GPL") or the Common
+Development and Distribution License("CDDL") (collectively, the
+"License"). You may not use this file except in compliance with the
+License. You can obtain a copy of the License at
+http://www.netbeans.org/cddl-gplv2.html
+or nbbuild/licenses/CDDL-GPL-2-CP. See the License for the
+specific language governing permissions and limitations under the
+License.  When distributing the software, include this License Header
+Notice in each file and include the License file at
+nbbuild/licenses/CDDL-GPL-2-CP.  Oracle designates this
+particular file as subject to the "Classpath" exception as provided
+by Oracle in the GPL Version 2 section of the License file that
+accompanied this code. If applicable, add the following below the
+License Header, with the fields enclosed by brackets [] replaced by
+your own identifying information:
+"Portions Copyrighted [year] [name of copyright owner]"
+
+If you wish your version of this file to be governed by only the CDDL
+or only the GPL Version 2, indicate your decision by adding
+"[Contributor] elects to include this software in this distribution
+under the [CDDL or GPL Version 2] license." If you do not indicate a
+single choice of license, a recipient has the option to distribute
+your version of this file under either the CDDL, the GPL Version 2 or
+to extend the choice of license to its licensees as provided above.
+However, if you add GPL Version 2 code and therefore, elected the GPL
+Version 2 license, then the option applies only if the new code is
+made subject to such option by the copyright holder.
+
+Contributor(s):
+-->
+<project name="c.atlassian.connector.eclipse.jira.core.rest" default="netbeans" basedir=".">
+    <import file="../nbbuild/templates/projectized.xml"/>
+    <target name="jar">
+        <jar jarfile="${cluster}/${module.jar}">
+            <zipfileset src="external/com.atlassian.connector.eclipse.jira.core_3.2.2.v20130909.jar"/>
+            <manifest>
+                <attribute name="Bundle-Activator" value="com.atlassian.connector.eclipse.internal.jira.core.JiraCorePlugin"/>
+                <attribute name="Bundle-SymbolicName" value="com.atlassian.connector.eclipse.jira.core.rest;singleton:=true"/>
+                <attribute name="Bundle-Version" value="3.2.2.v20130909"/>
+                <attribute name="Bundle-ActivationPolicy" value="lazy"/>
+                <attribute name="Bundle-ClassPath" value="."/>
+                <attribute name="Bundle-Localization" value="plugin"/>
+                <attribute name="Bundle-Name" value="%Bundle-Name"/>
+                <attribute name="Bundle-RequiredExecutionEnvironment" value="J2SE-1.5"/>    
+                <attribute name="Bundle-Vendor" value="%Bundle-Vendor"/>
+                <attribute name="Bundle-ManifestVersion" value="2"/>
+                <attribute name="Require-Bundle" value="javax.xml.rpc;bundle-version=&quot;1.1.0&quot;,javax.xml.soap;bundle-version=&quot;1.2.0&quot;,org.apache.axis;bundle-version=&quot;1.4.0&quot;,org.apache.commons.io,org.eclipse.core.runtime,org.eclipse.mylyn.commons.core;bundle-version=&quot;[3.0.0,4.0.0)&quot;,org.eclipse.mylyn.commons.net;bundle-version=&quot;[3.0.0,4.0.0)&quot;,org.eclipse.mylyn.commons.soap;bundle-version=&quot;[3.0.0,4.0.0)&quot;,org.eclipse.mylyn.tasks.core;bundle-version=&quot;[3.0.0,4.0.0)&quot;,com.atlassian.connector.eclipse.commons.core;visibility:=reexport,org.joda.time;bundle-version=&quot;1.6.0&quot;,org.codehaus.jettison;bundle-version=&quot;1.0.0&quot;,com.google.guava;bundle-version=&quot;13.0.0&quot;,com.sun.jersey;bundle-version=&quot;1.5.0&quot;"/>
+                <attribute name="Export-Package" value="com.atlassian.connector.eclipse.internal.jira.core;x-friends:=&quot;com.atlassian.connector.eclipse.jira.ui&quot;,com.atlassian.connector.eclipse.internal.jira.core.html;x-friends:=&quot;com.atlassian.connector.eclipse.jira.ui&quot;,com.atlassian.connector.eclipse.internal.jira.core.model;x-friends:=&quot;com.atlassian.connector.eclipse.jira.ui,com.atlassian.connector.eclipse.jira.tests&quot;,com.atlassian.connector.eclipse.internal.jira.core.model.filter;x-friends:=&quot;com.atlassian.connector.eclipse.jira.ui,com.atlassian.connector.eclipse.jira.tests&quot;,com.atlassian.connector.eclipse.internal.jira.core.service;x-friends:=&quot;com.atlassian.connector.eclipse.jira.ui,com.atlassian.connector.eclipse.jira.tests&quot;,com.atlassian.connector.eclipse.internal.jira.core.service.rest;x-friends:=&quot;com.atlassian.connector.eclipse.jira.tests&quot;,com.atlassian.connector.eclipse.internal.jira.core.service.soap;x-friends:=&quot;com.atlassian.connector.eclipse.jira.ui,com.atlassian.connector.eclipse.jira.tests&quot;,com.atlassian.connector.eclipse.internal.jira.core.service.web;x-friends:=&quot;com.atlassian.connector.eclipse.jira.ui,com.atlassian.connector.eclipse.jira.tests&quot;,com.atlassian.connector.eclipse.internal.jira.core.service.web.rss;x-friends:=&quot;com.atlassian.connector.eclipse.jira.ui&quot;,com.atlassian.connector.eclipse.internal.jira.core.util;x-friends:=&quot;com.atlassian.connector.eclipse.jira.ui&quot;,com.atlassian.connector.eclipse.internal.jira.core.wsdl.beans;x-friends:=&quot;com.atlassian.connector.eclipse.jira.ui,com.atlassian.connector.eclipse.jira.tests&quot;,com.atlassian.connector.eclipse.internal.jira.core.wsdl.soap;x-friends:=&quot;com.atlassian.connector.eclipse.jira.ui&quot;"/>
+                <attribute name="Import-Package" value="org.apache.commons.logging;version=&quot;[1.0.4,2.0.0)&quot;;resolution:=optional,org.apache.commons.logging.impl;version=&quot;[1.0.4,2.0.0)&quot;;resolution:=optional,javax.servlet;version=&quot;[2.4.0,3.0.0)&quot;;resolution:=optional,javax.servlet.http;version=&quot;[2.4.0,3.0.0)&quot;;resolution:=optional,javax.activation;resolution:=optional,javax.mail;resolution:=optional,javax.mail.internet;resolution:=optional,org.w3c.dom,com.atlassian.jira.rest.client,com.atlassian.jira.rest.client.auth,com.atlassian.jira.rest.client.domain,com.atlassian.jira.rest.client.domain.input,com.atlassian.jira.rest.client.internal,com.atlassian.jira.rest.client.internal.domain,com.atlassian.jira.rest.client.internal.domain.input,com.atlassian.jira.rest.client.internal.jersey,com.atlassian.jira.rest.client.internal.json,com.atlassian.jira.rest.client.internal.json.gen"/>
+                <attribute name="Eclipse-BuddyPolicy" value="registered"/>
+                <attribute name="Eclipse-RegisterBuddy" value="org.apache.axis"/>
+            </manifest>
+        </jar>
+    </target>
+</project>

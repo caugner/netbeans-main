@@ -1,0 +1,63 @@
+<!--
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+
+Copyright (c) 2006, 2016 Oracle and/or its affiliates. All rights reserved.
+
+Oracle and Java are registered trademarks of Oracle and/or its affiliates.
+Other names may be trademarks of their respective owners.
+
+The contents of this file are subject to the terms of either the GNU
+General Public License Version 2 only ("GPL") or the Common
+Development and Distribution License("CDDL") (collectively, the
+"License"). You may not use this file except in compliance with the
+License. You can obtain a copy of the License at
+http://www.netbeans.org/cddl-gplv2.html
+or nbbuild/licenses/CDDL-GPL-2-CP. See the License for the
+specific language governing permissions and limitations under the
+License.  When distributing the software, include this License Header
+Notice in each file and include the License file at
+nbbuild/licenses/CDDL-GPL-2-CP.  Oracle designates this
+particular file as subject to the "Classpath" exception as provided
+by Oracle in the GPL Version 2 section of the License file that
+accompanied this code. If applicable, add the following below the
+License Header, with the fields enclosed by brackets [] replaced by
+your own identifying information:
+"Portions Copyrighted [year] [name of copyright owner]"
+
+If you wish your version of this file to be governed by only the CDDL
+or only the GPL Version 2, indicate your decision by adding
+"[Contributor] elects to include this software in this distribution
+under the [CDDL or GPL Version 2] license." If you do not indicate a
+single choice of license, a recipient has the option to distribute
+your version of this file under either the CDDL, the GPL Version 2 or
+to extend the choice of license to its licensees as provided above.
+However, if you add GPL Version 2 code and therefore, elected the GPL
+Version 2 license, then the option applies only if the new code is
+made subject to such option by the copyright holder.
+
+Contributor(s):
+-->
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<font face="dialog"><b>Execution Command Line</b><br>
+<font size="-1"><br>
+<b>Parameters:</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>platformhome</b> - platform home filled above<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>device</b> - device name filled above<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>classpath</b> - platform classpath will be defined on the next wizard step<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>jadfile</b> - jad file name<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>jadurl</b> - jad url for OTA execution<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>securitydomain</b> - security domain for OTA execution<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>cmdoptions</b> - command line options propagated from project settings<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<b>/</b> - OS specific directory separator<br>
+<br>
+<b>Parameter formats:</b><br>
+{argument} is a simple replacement, so for example {jadfile} will be replaced by the real path to the jad file.<br>
+{argument|command line part} is a condition, if argument is set to some value the command line part will be added to the command line.<br>
+Combination of condition and simple replacement is allowed. For example: {jadfile|-Xdescriptor:&quot;{jadfile}&quot;} means that if the jadfile argument contains /myfolder/my.jad then -Xdescriptor:&quot;/myfolder/my.jad&quot; will be added to the command line.<br>
+</font></font>
+</body>
+</html>

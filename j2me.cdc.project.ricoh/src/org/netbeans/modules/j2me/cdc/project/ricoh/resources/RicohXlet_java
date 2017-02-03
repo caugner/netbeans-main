@@ -1,0 +1,183 @@
+<#--
+DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+
+Copyright (c) 2016 Oracle and/or its affiliates. All rights reserved.
+
+Oracle and Java are registered trademarks of Oracle and/or its affiliates.
+Other names may be trademarks of their respective owners.
+
+The contents of this file are subject to the terms of either the GNU
+General Public License Version 2 only ("GPL") or the Common
+Development and Distribution License("CDDL") (collectively, the
+"License"). You may not use this file except in compliance with the
+License. You can obtain a copy of the License at
+http://www.netbeans.org/cddl-gplv2.html
+or nbbuild/licenses/CDDL-GPL-2-CP. See the License for the
+specific language governing permissions and limitations under the
+License.  When distributing the software, include this License Header
+Notice in each file and include the License file at
+nbbuild/licenses/CDDL-GPL-2-CP.  Oracle designates this
+particular file as subject to the "Classpath" exception as provided
+by Oracle in the GPL Version 2 section of the License file that
+accompanied this code. If applicable, add the following below the
+License Header, with the fields enclosed by brackets [] replaced by
+your own identifying information:
+"Portions Copyrighted [year] [name of copyright owner]"
+
+If you wish your version of this file to be governed by only the CDDL
+or only the GPL Version 2, indicate your decision by adding
+"[Contributor] elects to include this software in this distribution
+under the [CDDL or GPL Version 2] license." If you do not indicate a
+single choice of license, a recipient has the option to distribute
+your version of this file under either the CDDL, the GPL Version 2 or
+to extend the choice of license to its licensees as provided above.
+However, if you add GPL Version 2 code and therefore, elected the GPL
+Version 2 license, then the option applies only if the new code is
+made subject to such option by the copyright holder.
+
+Contributor(s):
+-->
+<#assign licenseFirst = "/*">
+<#assign licensePrefix = " * ">
+<#assign licenseLast = " */">
+<#include "${project.licensePath}">
+
+
+<#if package?? && package != "">
+package ${package};
+
+</#if>
+
+import jp.co.ricoh.dsdk.xlet.UnavailableContainerException;
+import jp.co.ricoh.dsdk.xlet.Xlet;
+import jp.co.ricoh.dsdk.xlet.XletContext;
+import jp.co.ricoh.dsdk.xlet.XletStateChangeException;
+
+/**
+ * @author ${user}
+ */
+public class ${name} implements Xlet {
+
+    XletContext xletContext = null;
+    jp.co.ricoh.dsdk.panel.Frame rootFrame = null;
+    java.io.File homeDirectory = null;
+
+    /**
+     * Put your initialization here, not in constructor.
+     * If something goes wrong, XletStateChangeException
+     * should be thrown.
+     */
+    public synchronized void initXlet(XletContext context)
+        throws XletStateChangeException {
+	xletContext = context;
+	rootFrame = ${name}.getRootFrame(context);
+	homeDirectory = new java.io.File((String)xletContext.getXletProperty(XletContext.HOME));
+	this.makeUIControls();
+    }
+
+    /**
+     * Xlet will be started here.
+     * If something goes wrong, XletStateChangeException
+     * should be thrown.
+     */
+    public synchronized void startXlet() throws XletStateChangeException {
+        // TODO implement
+    }
+
+    /**
+     * Free resources, stop unnecessary threads, remove
+     * itself from the screen.
+     */
+    public synchronized void pauseXlet() {
+        // TODO implement
+    }
+
+    /**
+     * Destroy yout xlet here.
+     * If parameter is false, you can try to not destroy xlet
+     * by throwing an XletStateChangeException
+     */
+    public synchronized void destroyXlet(boolean unconditional)
+        throws XletStateChangeException {
+        //if((unconditional == false) && (okayToExit == false)) {
+	//    throw new XletStateChangeException();
+	//}
+
+	// TODO implement
+    }
+    
+    /**
+     * Make controls for xlet UI.
+     */
+    private void makeUIControls() {
+	//
+	// Make an example label
+	//
+	jp.co.ricoh.dsdk.panel.Label exampleLabel = new jp.co.ricoh.dsdk.panel.Label("TODO implement makeUIControls");
+	exampleLabel.setLocation(100,80);
+	exampleLabel.setSize(300,16);
+	
+	rootFrame.add(exampleLabel);
+	
+	//
+	// Make an example button
+	//
+	jp.co.ricoh.dsdk.panel.Button quitButton = new jp.co.ricoh.dsdk.panel.Button("Quit");
+	quitButton.setBounds(520,200,60,16);
+	quitButton.addActionListener(new jp.co.ricoh.dsdk.panel.event.ActionListener() {
+            public void actionPerformed(jp.co.ricoh.dsdk.panel.event.ActionEvent e) {
+                quit();
+            }
+	});
+	
+	rootFrame.add(quitButton);
+    }
+
+    /**
+     * Terminate the program
+     */
+    private void quit() {
+	try {
+	    this.destroyXlet(true);
+	    xletContext.notifyDestroyed();
+	}  catch(XletStateChangeException e) {}
+    }
+    
+    /**
+     * Returns a reference to the main window.
+     */
+    private static jp.co.ricoh.dsdk.panel.Frame getRootFrame(XletContext context) throws XletStateChangeException {
+        // find the frame window
+        jp.co.ricoh.dsdk.panel.Container parent = null;
+        
+	try {
+            parent = context.getContainer();
+        } catch (UnavailableContainerException ex) {
+            throw new XletStateChangeException(ex.toString());
+        }
+        
+        while(!(parent instanceof jp.co.ricoh.dsdk.panel.Frame)) {
+            parent = parent.getParent();
+            
+            if (parent == null)
+            {
+                return null;
+            }
+        }
+        
+        return (jp.co.ricoh.dsdk.panel.Frame)parent;
+    }
+    
+    /**
+     * Create a new thread for background processing.
+     */
+    private Thread createThread(java.lang.Runnable target) {
+	ThreadGroup xletThreadGroup = (ThreadGroup) xletContext.getXletProperty(XletContext.THREADGROUP);
+	
+	Thread resultThread = new Thread(xletThreadGroup, target);
+	resultThread.setDaemon(true);
+	resultThread.start();
+	
+	return resultThread;
+    }
+}
